@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>River</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+                font-family: Arial, Helvetica, sans-serif;
+               box-sizing: border-box;
+            }
+           #myvideo {
+            position: fixed;
+            min-width: 70%;
+            min-height: 70%;
+            bottom: -200px;
+            left: 0;
+           }
+
+           .content {
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+           }
+
+           .content p {
+            padding: 10px;
+            font-size: 20px;
+           }
+           
+           .content h1 {
+            font-size: 40px;
+            padding: 10px;
+           }
+
+           .content button {
+            border: none;
+            width: 170px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+           }
+
+           .content button:hover {
+            background-color: gainsboro;
+            color: black;
+            cursor: pointer;
+           }
+
+           @media screen and (max-width:400px) {
+
+            #myvideo {
+            min-width: 30%;
+            min-height: 30%;
+            bottom: 0px;
+            left: -440px;
+           }
+
+           .content {
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            height: 340px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+           }
+
+           .content p {
+            font-size: 13px;
+            text-align: justify;
+           }
+           
+           .content h1 {
+            font-size: 30px;
+           }
+           .not {
+            display: none;
+           }
+
+           .content button {
+            width: 100%;
+            margin: 0px;
+           }
+
+           }
+        </style>
+    </head>
+    <body>
+       <video autoplay loop muted id="myvideo">
+        <source src="river.mp4" type="video/mp4">
+       </video>
+       <div class="content">
+        <h1>River Flow</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi autem similique saepe doloribus voluptatem fugit vel voluptates dolor assumenda ut, magnam mollitia? Corrupti cum quos voluptatibus accusantium fugit molestiae voluptatum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius eos odit sequi nostrum harum, facere nesciunt. Labore tenetur in, ipsum necessitatibus molestias quis atque iusto hic dolores fugiat quidem ducimus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, vero? Ab autem illum veritatis, voluptatibus culpa maxime odio dolor vitae earum? Magnam nostrum iure alias sit dolor voluptatem eius soluta?</p>
+        <p class="not">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam sint quia nihil magnam totam, iusto, repudiandae officia impedit possimus fugiat tenetur saepe culpa. Sit exercitationem quasi quis itaque molestias. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem fugit aliquam eos amet ipsam nostrum et cum corporis dignissimos hic consequuntur facilis quidem magni dolorem inventore, modi temporibus repellat esse?</p>
+        <button onclick="nav()" id="btn">Play</button>
+       </div>
+    </body>
+    <script>
+        let vids = document.getElementById('myvideo');
+        let btn = document.getElementById('btn');
+
+        function nav(){
+            if(vids.paused) {
+                vids.play();
+                btn.innerHTML = "Play";
+            }
+            else {
+                vids.pause();
+                btn.innerHTML = "Pause";
+            }
+        }
+    </script>
+</html>
